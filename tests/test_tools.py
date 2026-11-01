@@ -167,3 +167,10 @@ def test_electric_filter_does_not_hide_electric_guitars(tools):
 
 def test_order_number_as_string_is_accepted(tools):
     assert tools.consultar_pedido(numero_pedido="6", telefone="(67) 98654-3210")["pedidos"][0]["cliente"] == "Gabriel"
+
+
+def test_shared_email_alone_does_not_verify_order(tools):
+    assert "erro" in tools.consultar_pedido(numero_pedido=10, email="bruno.martins@jmail.com")
+    assert "erro" in tools.avaliar_devolucao(10, "defeito", email="bruno.martins@jmail.com")
+    assert tools.consultar_pedido(numero_pedido=10, telefone="(67) 98543-2109")["pedidos"]
+    assert tools.consultar_pedido(numero_pedido=8, email="anacarol.ferreira@coldmail.com")["pedidos"]

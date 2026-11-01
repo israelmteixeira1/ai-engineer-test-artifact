@@ -316,7 +316,11 @@ class Tools:
             return None
         customer = self.store.customers[order["customer_id"]]
         phone_ok = bool(phone) and digits(phone) == customer["phone"]
-        email_ok = bool(email) and email.strip().lower() == customer["email"]
+        normalized = email.strip().lower() if email else None
+        # an e-mail shared by customers does not identify any of them
+        email_ok = normalized == customer["email"] and sum(
+            c["email"] == normalized for c in self.store.customers.values()
+        ) == 1
         return order if phone_ok or email_ok else None
 
     def _present_order(self, order: dict) -> dict:

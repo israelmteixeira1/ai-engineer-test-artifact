@@ -15,7 +15,7 @@ python -m emporio                 # start a conversation
 python -m emporio --debug         # also show every tool call and result
 python -m emporio --session ana   # reuse an id to resume that conversation
 
-pytest                            # 48 tests; no API key or network needed
+pytest                            # 49 tests; no API key or network needed
 python scripts/generate_examples.py   # regenerate examples/ with the real model
 ```
 
@@ -69,7 +69,7 @@ I profiled the CSVs and read the manual against them before designing the tools.
 | Product 136 is discontinued with 13 in stock; product 130 is `coming_soon` with 2 in stock | `status` wins: neither is offered for sale and no price is quoted |
 | Product 96 is `active` with zero stock and two expired promotions, one of 40% | Reported as temporarily unavailable, with alternatives; the old discounts are never applied |
 | Only `is_active = 1` promotions are valid (4 of 25), regardless of the calendar | The promotions table is the only source |
-| Customers 11 and 43 share an e-mail address | Phone plus e-mail must match the same customer to list orders |
+| Customers 11 and 43 share an e-mail address | A shared e-mail alone never verifies an order; the phone is required |
 | Totals of orders 3 and 20 differ from current prices (3450 vs 3498; 1400 vs 1488) | The agent reports the amount stored on the order and does not try to explain the difference |
 | Order 8 is `shipped` with an estimated delivery in the past | The tool raises an alert; the agent apologizes and offers a handoff |
 | Orders have no delivery date | The return tool asks the customer for the receipt date instead of treating the estimate as fact |
