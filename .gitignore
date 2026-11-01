@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.state/
+.DS_Store
+desafio_tecnico_ai_eng_artefact.pdf
