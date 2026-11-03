@@ -57,7 +57,7 @@ customer -> CLI -> Agent loop <-> Claude (Messages API)
 
 ## Data treatment
 
-I profiled the CSVs and read the manual against them before designing the tools. What I found:
+The CSVs were profiled and compared with the manual before designing the tools. Findings:
 
 | Finding | Treatment |
 |---|---|
@@ -105,4 +105,14 @@ I profiled the CSVs and read the manual against them before designing the tools.
 
 ## Use of coding assistants
 
-I used Claude Code as my coding assistant. I decided the strategy and told it how I wanted the solution to work, then reviewed the plan it generated from those requirements and guidelines. Following that plan, it profiled the CSVs against the manual and drafted the code, tests and this README. I ran the agent to produce the examples. The unit tests give an independent check on the rules it implemented.
+I used Claude Code as my coding assistant, with me deciding and it executing:
+
+1. **Strategy:** I decided the approach and told it how the solution should work.
+2. **Plan review:** it generated a plan from those requirements and guidelines, and I reviewed it before implementation.
+3. **Implementation:** following that plan, it profiled the CSVs against the manual and drafted the code, tests and this README.
+4. **Verification:** I did not rely on its output alone. Business rules are covered by unit tests, I ran the agent against the real model to produce the examples, and I followed this README from a fresh clone.
+
+These checks caught real problems:
+
+- A review found that an e-mail shared by two customers could verify an order on its own. A shared e-mail now always requires the phone (`6a321a8`).
+- The fresh-clone install showed that bare `pytest` failed, although the assistant had reported the tests as passing: it had been running them with `python -m pytest` (`fd6a394`).
