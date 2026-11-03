@@ -7,33 +7,34 @@ Model: `claude-opus-5-5`. Store clock: 2026-03-25T10:00:00.
 > tool: `buscar_produtos` `{'termo': 'Crafter HT-100', 'apenas_disponiveis': False}`  
 > tool: `simular_pagamento` `{'itens': [{'product_id': 90, 'quantidade': 1}]}`  
 
-**Tom:** Oi! Eu sou o Tom, assistente virtual da Empório da Música.
+**Tom:** Oi! Aqui é o Tom, assistente virtual da Empório da Música.
 
-Sim, o Crafter HT-100 Folk Aço Natural está em promoção, e temos 3 unidades em estoque:
+Sim, o Crafter HT-100 Folk Aço Natural está em promoção e tem 3 unidades em estoque:
+
 - Preço original: R$ 2.399,00
-- Desconto Exclusivo: 18%
+- Desconto Exclusivo de 18%
 - Preço promocional: R$ 1.967,18
 
-No PIX o preço não cai mais. Os 5% de desconto do PIX valem só para itens que não estão em promoção, e os descontos não se somam. Então no PIX ele sai pelos mesmos R$ 1.967,18.
+No PIX ele não fica mais barato. O desconto de 5% do PIX só vale para itens sem promoção, e os descontos não se somam. Então no PIX o valor continua R$ 1.967,18.
 
-Se preferir, dá para parcelar em até 12x de R$ 163,93 sem juros no cartão. O frete não está incluído nesses valores.
+Se preferir parcelar, dá para fazer em até 12x sem juros de R$ 163,93. O frete não está incluído nesses valores.
 
-É um violão folk com tampo sólido de spruce Engelmann, fundo, laterais e braço de mogno, e cordas de aço. Ele não tem captação. Se você quer ligar o violão em caixa ou amplificador, posso procurar opções eletroacústicas.
+Ele tem tampo sólido de Spruce Engelmann, fundo e laterais de mogno e cordas de aço. Não tem captação, então é só acústico. Precisa de mais alguma coisa?
 
 **Customer:** E o Giannini GF-3D? Vi que estava com 40% de desconto na Semana do Músico, quero esse.
 
 > tool: `buscar_produtos` `{'termo': 'Giannini GF-3D', 'apenas_disponiveis': False}`  
 > tool: `consultar_politicas` `{'secoes': ['promocoes']}`  
-> tool: `buscar_produtos` `{'categoria': 'Violões', 'tipo_corda': 'steel', 'preco_max': 1200}`  
+> tool: `buscar_produtos` `{'categoria': 'Violões', 'tipo_corda': 'steel', 'preco_max': 1100, 'termo': 'dreadnought'}`  
 
-**Tom:** Tenho duas notícias chatas sobre o Giannini GF-3D Dreadnought Sunburst:
+**Tom:** Tenho duas notícias sobre o Giannini GF-3D Dreadnought Sunburst, e nenhuma é boa:
 
-1. Ele está temporariamente indisponível, sem estoque. Pelas regras da loja, produto esgotado não garante preço reservado para quando voltar.
-2. O desconto de 40% da Semana do Músico não está valendo. Essa campanha acontece na semana de 22 de novembro, e hoje ele não tem nenhuma promoção. O preço normal dele é R$ 799,90.
+- Ele está temporariamente indisponível, sem estoque no momento.
+- O desconto de 40% não está valendo. O preço de tabela dele é R$ 799,90 e ele não tem nenhuma promoção ativa agora. A Semana do Músico acontece na semana de 22 de novembro. Mesmo quando há promoção, produto esgotado não garante reserva do preço.
 
-Se você quer um dreadnought parecido, separei algumas opções que temos em estoque:
-- Shelby SGD-195E Elétrico Aço Sunburst, por R$ 799,00. É o mais próximo: dreadnought sunburst com tampo de spruce, fundo e laterais de sapele e braço de nato, com as mesmas madeiras e a mesma escala do GF-3D. A diferença é que ele também tem captação e afinador embutido.
-- Tagima Woodstock Dreadnought Natural, por R$ 899,00. Também é dreadnought de spruce e sapele, sem captação, no acabamento natural.
-- Giannini GF-1R Aço Folk Sunburst, por R$ 579,90. É da mesma marca e cor, só que no formato folk, que é um pouco menor que o dreadnought.
+Separei duas opções parecidas que estão em estoque, as duas sem promoção no momento:
 
-Nenhum deles está em promoção, então todos ganham o desconto de 5% no PIX. Quer que eu calcule o valor no PIX e as parcelas de algum deles?
+- Tagima Woodstock Dreadnought Natural, R$ 899,00 (11 unidades). É a mais parecida com o Giannini: mesmas madeiras (tampo de spruce, fundo e laterais de sapele, braço de nato), mesma escala de 650mm, cordas de aço e também sem captação. Muda a cor, que é natural.
+- Shelby SGD-195E Elétrico Aço Sunburst, R$ 799,00 (6 unidades). Tem as mesmas madeiras e a mesma cor sunburst do Giannini. A diferença é que tem captação e afinador embutido, então dá para ligar no amplificador.
+
+Como essas não estão em promoção, o PIX tem 5% de desconto nelas. Quer que eu calcule o valor no PIX ou as parcelas de alguma?
